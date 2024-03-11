@@ -1,8 +1,8 @@
 -- Product_Category table
 CREATE TABLE Product_Category (
-    category_id INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    description TEXT,
+    desc TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deleted_at TIMESTAMP DEFAULT NULL
@@ -10,9 +10,9 @@ CREATE TABLE Product_Category (
 
 -- Product table
 CREATE TABLE Product (
-    product_id INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    description TEXT,
+    desc TEXT,
     SKU VARCHAR(50),
     category_id INT,
     inventory_id INT,
@@ -28,7 +28,7 @@ CREATE TABLE Product (
 
 -- Product_Inventory table
 CREATE TABLE Product_Inventory (
-    inventory_id INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     quantity INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -37,9 +37,9 @@ CREATE TABLE Product_Inventory (
 
 -- Discount table
 CREATE TABLE Discount (
-    discount_id INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    description TEXT,
+    desc TEXT,
     discount_percent DECIMAL(5, 2) NOT NULL,
     active BOOLEAN DEFAULT true,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
